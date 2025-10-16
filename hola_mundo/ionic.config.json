@@ -1,0 +1,7 @@
+{
+  "name": "hola_mundo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

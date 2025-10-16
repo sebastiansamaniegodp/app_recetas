@@ -1,0 +1,9 @@
+// Estilos personalizados para tabs si los necesitas
+ion-tab-bar {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-medium);
+}
+
+ion-tab-button {
+  --color-selected: var(--ion-color-primary);
+}
