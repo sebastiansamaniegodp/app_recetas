@@ -138,7 +138,6 @@ export class InicioPage implements OnInit {
   toggleFavorite(recipe: Recipe, event: Event) {
     event.stopPropagation();
     this.recipeService.toggleFavorite(recipe.id);
-    recipe.isFavorite = !recipe.isFavorite;
   }
 
   /**
