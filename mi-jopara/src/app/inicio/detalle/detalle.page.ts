@@ -71,7 +71,6 @@ export class DetallePage implements OnInit {
   toggleFavorite() {
     if (this.recipe) {
       this.recipeService.toggleFavorite(this.recipe.id);
-      this.recipe.isFavorite = !this.recipe.isFavorite;
     }
   }
 
