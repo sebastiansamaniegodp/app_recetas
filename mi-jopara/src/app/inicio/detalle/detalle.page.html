@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/inicio" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">- MI JOPARA -</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="detalle-container" *ngIf="recipe">
+    <!-- Card principal con información de la receta -->
+    <ion-card class="recipe-detail-card">
+      <ion-card-header>
+        <div class="header-content">
+          <div class="title-container">
+            <ion-card-title>{{ recipe.nombre }}</ion-card-title>
+            <div class="categories">
+              <ion-chip
+                color="primary"
+                *ngFor="let category of recipe.categorias"
+              >
+                <ion-label>{{ category }}</ion-label>
+              </ion-chip>
+            </div>
+          </div>
+          <ion-icon
+            [name]="recipe.isFavorite ? 'star' : 'star-outline'"
+            [color]="recipe.isFavorite ? 'warning' : 'medium'"
+            class="favorite-icon-large"
+            (click)="toggleFavorite()"
+          ></ion-icon>
+        </div>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Descripción -->
+        <div class="description-section">
+          <p>{{ recipe.descripcion }}</p>
+        </div>
+
+        <!-- Información Nutricional -->
+        <div class="nutritional-section">
+          <h3>Información Nutricional</h3>
+          <div class="nutritional-grid">
+            <div class="nutritional-item">
+              <span class="label">Calorías:</span>
+              <span class="value">{{ recipe.infoNutricional.calorias }} kcal</span>
+            </div>
+            <div class="nutritional-item">
+              <span class="label">Proteínas:</span>
+              <span class="value">{{ recipe.infoNutricional.proteinas }} g</span>
+            </div>
+            <div class="nutritional-item">
+              <span class="label">Carbohidratos:</span>
+              <span class="value">{{ recipe.infoNutricional.carbohidratos }} g</span>
+            </div>
+            <div class="nutritional-item">
+              <span class="label">Grasas:</span>
+              <span class="value">{{ recipe.infoNutricional.grasas }} g</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ingredientes -->
+        <div class="ingredients-section">
+          <h3>Ingredientes</h3>
+          <ul class="ingredients-list">
+            <li *ngFor="let ingredient of recipe.ingredientes">
+              {{ ingredient.cantidad }} {{ ingredient.unidad }}
+              {{ ingredient.nombre }}
+            </li>
+          </ul>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Mensaje si no se encuentra la receta -->
+  <div class="error-container" *ngIf="!recipe">
+    <p>No se encontró la receta solicitada.</p>
+  </div>
+</ion-content>

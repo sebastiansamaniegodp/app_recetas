@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      - MI JOPARA -
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Buscador -->
+  <div class="search-container">
+    <ion-searchbar
+      [(ngModel)]="searchQuery"
+      (ionInput)="onSearchChange($event)"
+      placeholder="Escribe ingredientes..."
+      animated="true"
+    ></ion-searchbar>
+  </div>
+
+  <!-- Título de Recetas con botón Ver todos -->
+  <div class="section-header">
+    <h2>Recetas</h2>
+    <ion-button fill="clear" size="small" (click)="showAllRecipes()">
+      Ver todos >
+    </ion-button>
+  </div>
+
+  <!-- Filtros de categorías -->
+  <div class="categories-container">
+    <ion-chip
+      *ngFor="let category of categories"
+      [outline]="selectedCategory !== category"
+      [color]="selectedCategory === category ? 'primary' : 'medium'"
+      (click)="selectCategory(category)"
+    >
+      <ion-label>{{ category }}</ion-label>
+    </ion-chip>
+  </div>
+
+  <!-- Grid de recetas -->
+  <ion-grid class="recipes-grid">
+    <ion-row>
+      <ion-col
+        size="6"
+        size-md="4"
+        size-lg="3"
+        *ngFor="let recipe of displayedRecipes"
+      >
+        <ion-card class="recipe-card" (click)="viewRecipeDetail(recipe.id)">
+          <!-- Placeholder para imagen -->
+          <div class="recipe-image-placeholder"></div>
+
+          <ion-card-header>
+            <div class="card-header-content">
+              <ion-chip color="primary" class="category-chip">
+                <ion-label class="category-label">{{
+                  getPrimaryCategory(recipe)
+                }}</ion-label>
+              </ion-chip>
+              <ion-icon
+                [name]="recipe.isFavorite ? 'star' : 'star-outline'"
+                [color]="recipe.isFavorite ? 'warning' : 'medium'"
+                class="favorite-icon"
+                (click)="toggleFavorite(recipe, $event)"
+              ></ion-icon>
+            </div>
+            <ion-card-title class="recipe-title">{{
+              recipe.nombre
+            }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Mensaje cuando no hay recetas -->
+    <ion-row *ngIf="displayedRecipes.length === 0">
+      <ion-col class="ion-text-center">
+        <p class="no-recipes-message">
+          No se encontraron recetas con los criterios seleccionados
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

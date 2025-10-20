@@ -1,0 +1,185 @@
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-light);
+
+    ion-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.detalle-container {
+  padding: 16px;
+
+  .recipe-detail-card {
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    ion-card-header {
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .title-container {
+          flex: 1;
+
+          ion-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--ion-color-dark);
+            margin-bottom: 12px;
+          }
+
+          .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            ion-chip {
+              margin: 0;
+              height: 28px;
+            }
+          }
+        }
+
+        .favorite-icon-large {
+          font-size: 2.5rem;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    ion-card-content {
+      .description-section {
+        margin-bottom: 24px;
+
+        p {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: var(--ion-color-dark);
+          text-align: justify;
+        }
+      }
+
+      .nutritional-section {
+        margin-bottom: 24px;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: var(--ion-color-dark);
+          margin-bottom: 12px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid var(--ion-color-primary);
+        }
+
+        .nutritional-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+
+          .nutritional-item {
+            background: var(--ion-color-light);
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .label {
+              font-size: 0.85rem;
+              color: var(--ion-color-medium);
+              margin-bottom: 4px;
+            }
+
+            .value {
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: var(--ion-color-primary);
+            }
+          }
+        }
+      }
+
+      .ingredients-section {
+        h3 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: var(--ion-color-dark);
+          margin-bottom: 12px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid var(--ion-color-primary);
+        }
+
+        .ingredients-list {
+          list-style-position: inside;
+          padding-left: 0;
+
+          li {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: var(--ion-color-dark);
+            padding: 8px 12px;
+            background: var(--ion-color-light);
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 3px solid var(--ion-color-secondary);
+
+            &::marker {
+              color: var(--ion-color-secondary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+
+  p {
+    font-size: 1.1rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+// Media queries para tablets y desktop
+@media (min-width: 768px) {
+  .detalle-container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .recipe-detail-card {
+      ion-card-header {
+        .header-content {
+          .title-container {
+            ion-card-title {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      ion-card-content {
+        .nutritional-section {
+          .nutritional-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+      }
+    }
+  }
+}
