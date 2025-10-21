@@ -28,7 +28,7 @@
             [name]="recipe.isFavorite ? 'star' : 'star-outline'"
             [color]="recipe.isFavorite ? 'warning' : 'medium'"
             class="favorite-icon-large"
-            (click)="toggleFavorite()"
+            (click)="toggleFavorite($event)"
           ></ion-icon>
         </div>
       </ion-card-header>
