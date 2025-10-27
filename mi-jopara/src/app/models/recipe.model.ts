@@ -20,6 +20,8 @@ export interface Recipe {
   infoNutricional: NutritionalInfo;
   isFavorite: boolean;
   isPopular?: boolean;
+  imagen?: string; // Añadido JULIO
+  tiempoPreparacion?: number; // Añadido JULIO
 }
 
 export type Category =

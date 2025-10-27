@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Recipe, Category } from '../models/recipe.model';
 import { MOCK_RECIPES } from '../models/mock-data';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators'; // Añadido Julio
 
 @Injectable({
   providedIn: 'root',
@@ -38,9 +39,15 @@ export class RecipeService {
    * Obtiene todas las recetas favoritas
    */
   getFavorites(): Observable<Recipe[]> {
+    return this.recipesSubject.asObservable().pipe(
+      map(recipes => recipes.filter(recipe => recipe.isFavorite))
+    );
+  }
+  /**
+  getFavorites(): Observable<Recipe[]> {
     const favorites = this.recipes.filter((recipe) => recipe.isFavorite);
     return new BehaviorSubject(favorites).asObservable();
-  }
+  } */
 
   /**
    * Marca o desmarca una receta como favorita
