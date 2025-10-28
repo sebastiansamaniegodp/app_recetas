@@ -1,48 +1,42 @@
-ion-header {
-  ion-toolbar {
-    --background: var(--ion-color-light);
-
-    ion-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-    }
+.perfil-card {
+  text-align: center;
+  margin-top: 1rem;
+  ion-card-header {
+    margin-top: 0.5rem;
   }
 }
 
-.placeholder-container {
+.perfil-avatar {
+  margin: 1rem auto 0.5rem;
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--ion-color-primary);
+}
+
+.perfil-stats {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 40px;
+  justify-content: space-around;
+  margin-top: 1rem;
   text-align: center;
 
-  .placeholder-icon {
-    font-size: 120px;
-    color: var(--ion-color-primary);
-    opacity: 0.4;
-    margin-bottom: 24px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--ion-color-dark);
-    margin-bottom: 16px;
-  }
-
-  p {
-    font-size: 1rem;
-    color: var(--ion-color-medium);
-    margin-bottom: 8px;
-  }
-
-  .coming-soon {
+  strong {
     font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--ion-color-secondary);
-    margin-top: 24px;
+    color: var(--ion-color-primary);
   }
+
+  span {
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+ion-item[color="danger"] {
+  --background: var(--ion-color-danger-tint);
+  color: #fff;
 }
