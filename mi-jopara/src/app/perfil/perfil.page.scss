@@ -1,8 +1,15 @@
-.perfil-card {
-  text-align: center;
-  margin-top: 1rem;
-  ion-card-header {
-    margin-top: 0.5rem;
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    background: linear-gradient(135deg, var(--ion-color-primary-shade) 0%, var(--ion-color-primary) 50%, var(--ion-color-secondary-shade) 100%);
+    --color: white;
+
+    ion-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: white;
+    }
   }
 }
 

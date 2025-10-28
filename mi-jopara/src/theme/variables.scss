@@ -4,28 +4,28 @@
 /** Ionic CSS Variables **/
 :root {
   /** Primary - Verde Oliva **/
-  --ion-color-primary: #6B7A4B;
+  --ion-color-primary: #8dad48;
   --ion-color-primary-rgb: 107, 122, 75;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #5e6b42;
+  --ion-color-primary-shade: #94a56e;
   --ion-color-primary-tint: #7a875d;
 
-  /** Secondary - Naranja **/
-  --ion-color-secondary: #FF8C42;
-  --ion-color-secondary-rgb: 255, 140, 66;
+  /** Secondary - Dorado **/
+  --ion-color-secondary: #419b45;
+  --ion-color-secondary-rgb: 212, 175, 55;
   --ion-color-secondary-contrast: #000000;
   --ion-color-secondary-contrast-rgb: 0, 0, 0;
-  --ion-color-secondary-shade: #e07b3a;
-  --ion-color-secondary-tint: #ff9855;
+  --ion-color-secondary-shade: #3e9943;
+  --ion-color-secondary-tint: #559245;
 
-  /** Tertiary **/
-  --ion-color-tertiary: #5260ff;
-  --ion-color-tertiary-rgb: 82, 96, 255;
+  /** Tertiary - Negro **/
+  --ion-color-tertiary: #1a1a1a;
+  --ion-color-tertiary-rgb: 26, 26, 26;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #4854e0;
-  --ion-color-tertiary-tint: #6370ff;
+  --ion-color-tertiary-shade: #141414;
+  --ion-color-tertiary-tint: #2e2e2e;
 
   /** Success **/
   --ion-color-success: #2dd36f;
@@ -35,13 +35,13 @@
   --ion-color-success-shade: #28ba62;
   --ion-color-success-tint: #42d77d;
 
-  /** Warning - Amarillo para estrellas **/
-  --ion-color-warning: #ffc409;
-  --ion-color-warning-rgb: 255, 196, 9;
+  /** Warning - Dorado para estrellas **/
+  --ion-color-warning: #D4AF37;
+  --ion-color-warning-rgb: 212, 175, 55;
   --ion-color-warning-contrast: #000000;
   --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #e0ac08;
-  --ion-color-warning-tint: #ffca22;
+  --ion-color-warning-shade: #b89730;
+  --ion-color-warning-tint: #ddbf51;
 
   /** Danger **/
   --ion-color-danger: #eb445a;
@@ -88,7 +88,7 @@
 
   --ion-toolbar-background: #ffffff;
 
-  --ion-tab-bar-background: #ffffff;
+  --ion-tab-bar-background: linear-gradient(to top, #489e32, #7cb943);
 
   --ion-card-background: #ffffff;
 }
