@@ -6,7 +6,6 @@ import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonCon
          IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
          IonList, IonItem, IonLabel, IonToggle, IonAvatar } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-perfil',
@@ -16,7 +15,7 @@ import { NgIf } from '@angular/common';
   imports: [
     IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
     IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
-    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule, NgIf
+    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule
   ]
 })
 export class PerfilPage implements OnInit {
