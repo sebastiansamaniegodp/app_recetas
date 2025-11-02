@@ -25,7 +25,7 @@ export const MOCK_RECIPES: Recipe[] = [
   },
   {
     id: 2,
-    nombre: 'Tortas de Avena con 3μQ',
+    nombre: 'Tortas de Avena con Proteina',
     descripcion: 'Las tortitas de avena con proteína son rápidas, fáciles de hacer y llenas de fibra y potentes vitaminas, que ayudan a promover el crecimiento muscular.',
     categorias: ['Desayuno', 'Saludables', 'Masa Muscular'],
     ingredientes: [
