@@ -67,6 +67,32 @@ export class InicioPage implements OnInit {
     'Bajar de Peso',
   ];
 
+  // Mapeo de colores suaves para cada categoría (tonos pastel)
+  private categoryColors: Record<Category, string> = {
+    'Desayuno': '#FFB74D',
+    'Almuerzo': '#81C784',
+    'Merienda': '#F06292',
+    'Cena': '#7986CB',
+    'Saludables': '#81C784',
+    'Salados': '#A1887F',
+    'Dulces': '#EC407A',
+    'Masa Muscular': '#E57373',
+    'Bajar de Peso': '#4DD0E1',
+  };
+
+  // Mapeo de colores claros para gradientes (40% más claro)
+  private categoryColorsLight: Record<Category, string> = {
+    'Desayuno': '#FFD494',
+    'Almuerzo': '#AED9B1',
+    'Merienda': '#F69EBA',
+    'Cena': '#A3ADDC',
+    'Saludables': '#AED9B1',
+    'Salados': '#C0ACA5',
+    'Dulces': '#F37CA0',
+    'Masa Muscular': '#EDA0A0',
+    'Bajar de Peso': '#8AE0EB',
+  };
+
   constructor(
     private recipeService: RecipeService,
     private router: Router,
@@ -212,5 +238,21 @@ export class InicioPage implements OnInit {
    */
   getPrimaryCategory(recipe: Recipe): string {
     return recipe.categorias[0] || '';
+  }
+
+  /**
+   * Obtiene el color de una categoría
+   */
+  getCategoryColor(category: Category): string {
+    return this.categoryColors[category];
+  }
+
+  /**
+   * Obtiene el gradiente lineal de una categoría
+   */
+  getCategoryGradient(category: Category): string {
+    const baseColor = this.categoryColors[category];
+    const lightColor = this.categoryColorsLight[category];
+    return `linear-gradient(45deg, ${baseColor}, ${lightColor})`;
   }
 }

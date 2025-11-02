@@ -59,9 +59,54 @@ ion-header {
     flex-shrink: 0;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    opacity: 0.95;
+
+    // Gradient border usando pseudo-elemento con mask-composite
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 2.5px; // Grosor del borde
+      background: var(--category-gradient);
+      pointer-events: none;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+
+      // Crear efecto de borde con mask
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    // Estado no seleccionado: borde más sutil
+    &:not(.selected) {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+      &::before {
+        opacity: 0.6; // Más sutil cuando no está seleccionado
+      }
+    }
+
+    // Estado seleccionado: borde más intenso con sombra y glow
+    &.selected {
+      box-shadow: 0 0 12px var(--category-color),
+                  inset 0 0 8px rgba(0, 0, 0, 0.05);
+      opacity: 1;
+
+      &::before {
+        opacity: 1; // Intensidad completa cuando está seleccionado
+      }
+    }
 
     &:hover {
       transform: scale(1.05);
+
+      &::before {
+        opacity: 1; // Resaltar gradiente al hacer hover
+      }
     }
   }
 }

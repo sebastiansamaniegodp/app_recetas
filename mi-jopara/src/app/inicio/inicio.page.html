@@ -32,6 +32,10 @@
       [outline]="selectedCategory !== category"
       [color]="selectedCategory === category ? 'primary' : 'medium'"
       (click)="selectCategory(category)"
+      [attr.data-category]="category"
+      [style.--category-color]="getCategoryColor(category)"
+      [style.--category-gradient]="getCategoryGradient(category)"
+      [class.selected]="selectedCategory === category"
     >
       <ion-label>{{ category }}</ion-label>
     </ion-chip>
