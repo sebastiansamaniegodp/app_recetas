@@ -111,7 +111,7 @@ export class PerfilPage implements OnInit {
   }
 
   verMisRecetas() {
-    this.router.navigate(['/mis-recetas']);
+    this.router.navigate(['/tabs/mis-recetas']);
   }
 
   async cerrarSesion() {

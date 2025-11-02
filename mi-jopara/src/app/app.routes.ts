@@ -28,6 +28,10 @@ export const routes: Routes = [
           import('./coleccion/coleccion.page').then((m) => m.ColeccionPage),
       },
       {
+        path: 'mis-recetas',
+        loadComponent: () => import('./mis-recetas/mis-recetas.page').then((m) => m.MisRecetasPage),
+      },
+      {
         path: 'perfil',
         loadComponent: () =>
           import('./perfil/perfil.page').then((m) => m.PerfilPage),

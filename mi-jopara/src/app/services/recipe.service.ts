@@ -21,6 +21,30 @@ export class RecipeService {
   }
 
   /**
+   * Añade una nueva receta al conjunto y emite el cambio
+   */
+  addRecipe(partial: Partial<Recipe>): Recipe {
+    const maxId = this.recipes.reduce((max, r) => Math.max(max, r.id), 0);
+    const newRecipe: Recipe = {
+      id: maxId + 1,
+      nombre: partial.nombre || 'Sin título',
+      descripcion: partial.descripcion || '',
+      categorias: partial.categorias || [],
+      ingredientes: partial.ingredientes || [],
+      infoNutricional: partial.infoNutricional || { calorias: 0, proteinas: 0, carbohidratos: 0, grasas: 0 },
+      isFavorite: false,
+      isPopular: !!partial.isPopular,
+      imagen: partial.imagen,
+      tiempoPreparacion: partial.tiempoPreparacion,
+      autor: partial.autor
+    };
+
+    this.recipes.unshift(newRecipe);
+    this.recipesSubject.next([...this.recipes]);
+    return newRecipe;
+  }
+
+  /**
    * Obtiene solo las recetas marcadas como populares
    */
   getPopularRecipes(): Observable<Recipe[]> {

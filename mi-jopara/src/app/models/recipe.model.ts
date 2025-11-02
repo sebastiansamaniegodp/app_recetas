@@ -22,6 +22,7 @@ export interface Recipe {
   isPopular?: boolean;
   imagen?: string; // Añadido JULIO
   tiempoPreparacion?: number; // Añadido JULIO
+  autor?: string; // usuario que compartió la receta
 }
 
 export type Category =
@@ -34,3 +35,5 @@ export type Category =
   | 'Dulces'
   | 'Masa Muscular'
   | 'Bajar de Peso';
+  // Se añadieron nuevas categorías usadas en la UI
+  export type CategoryExtended = Category | 'Bebidas' | 'Postres';

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -97,13 +98,21 @@ export class InicioPage implements OnInit {
     private recipeService: RecipeService,
     private router: Router,
     private renderer: Renderer2,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private route: ActivatedRoute
   ) {
     addIcons({ star, starOutline });
   }
 
   ngOnInit() {
-    this.loadPopularRecipes();
+    // If navigated with ?showAll=1, show all recipes; otherwise load popular
+    this.route.queryParams.subscribe((qp) => {
+      if (qp && qp['showAll'] === '1') {
+        this.showAllRecipes();
+      } else {
+        this.loadPopularRecipes();
+      }
+    });
   }
 
   /**
