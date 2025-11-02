@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss(false)">Cancelar</ion-button>
+      <ion-button (click)="dismiss(true)" color="primary">Guardar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Foto URL</ion-label>
+      <ion-input [(ngModel)]="model.photoURL" placeholder="https://..."></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="model.photoURL || 'assets/avatar-default.png'" />
+      </ion-avatar>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="model.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="model.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Biografía</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="model.bio"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categoría favorita</ion-label>
+      <ion-select [(ngModel)]="model.favoriteCategory">
+        <ion-select-option value="Desayuno">Desayuno</ion-select-option>
+        <ion-select-option value="Almuerzo">Almuerzo</ion-select-option>
+        <ion-select-option value="Merienda">Merienda</ion-select-option>
+        <ion-select-option value="Cena">Cena</ion-select-option>
+        <ion-select-option value="Saludables">Saludables</ion-select-option>
+        <ion-select-option value="Salados">Salados</ion-select-option>
+        <ion-select-option value="Dulces">Dulces</ion-select-option>
+        <ion-select-option value="Masa Muscular">Masa Muscular</ion-select-option>
+        <ion-select-option value="Bajar de Peso">Bajar de Peso</ion-select-option>
+        <ion-select-option value="Bebidas">Bebidas</ion-select-option>
+        <ion-select-option value="Postres">Postres</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Idioma</ion-label>
+      <ion-select [(ngModel)]="model.language">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Preferencia de medición</ion-label>
+      <ion-select [(ngModel)]="model.measurePref">
+        <ion-select-option value="grams">Gramos</ion-select-option>
+        <ion-select-option value="cups">Tazas</ion-select-option>
+        <ion-select-option value="ounces">Onzas</ion-select-option>
+        <ion-select-option value="portions">Porciones</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

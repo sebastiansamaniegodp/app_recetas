@@ -24,6 +24,11 @@
     <ion-card-content>
       <p>{{ user.bio || 'Agrega una biografía para presentarte.' }}</p>
 
+      <div class="perfil-meta">
+        <p><strong>Categoría favorita:</strong> {{ user.favoriteCategory || '—' }}</p>
+  <p><strong>Preferencia de medición:</strong> {{ getMeasureLabel(user.measurePref) }}</p>
+      </div>
+
       <div class="perfil-stats">
         <div>
           <strong>{{ user.recetas }}</strong>

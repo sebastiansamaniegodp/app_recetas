@@ -6,6 +6,7 @@ import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonCon
          IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
          IonList, IonItem, IonLabel, IonToggle, IonAvatar } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
+import { PerfilEditComponent } from './perfil-edit.component';
 
 @Component({
   selector: 'app-perfil',
@@ -15,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
     IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
-    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule
+    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule, PerfilEditComponent
   ]
 })
 export class PerfilPage implements OnInit {
@@ -28,12 +29,21 @@ export class PerfilPage implements OnInit {
     favoritos: 0
   };
 
+  // Mapping of internal measure keys to user-facing Spanish labels
+  private measureLabels: Record<string, string> = {
+    grams: 'Gramos',
+    cups: 'Tazas',
+    ounces: 'Onzas',
+    portions: 'Porciones'
+  };
+
   darkMode = false;
 
   constructor(
     private userService: UserService,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
+    private modalCtrl: ModalController,
     private router: Router
   ) {}
 
@@ -53,31 +63,42 @@ export class PerfilPage implements OnInit {
   }
 
   async editarPerfil() {
-    const alert = await this.alertCtrl.create({
-      header: 'Editar Perfil',
-      inputs: [
-        { name: 'name', type: 'text', placeholder: 'Nombre', value: this.user.name },
-        { name: 'bio', type: 'textarea', placeholder: 'Biografía', value: this.user.bio }
-      ],
-      buttons: [
-        { text: 'Cancelar', role: 'cancel' },
-        {
-          text: 'Guardar',
-          handler: async (data) => {
-            this.user.name = data.name;
-            this.user.bio = data.bio;
-            await this.userService.updateUserData(this.user);
-            const toast = await this.toastCtrl.create({
-              message: 'Perfil actualizado correctamente',
-              duration: 1500,
-              color: 'success'
-            });
-            toast.present();
-          }
-        }
-      ]
+    const modal = await this.modalCtrl.create({
+      component: PerfilEditComponent,
+      componentProps: { modelData: { ...this.user } }
     });
-    await alert.present();
+
+    // Pre-fill the modal model with current user data after it has been presented
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    if (data) {
+      // Merge returned fields into user and persist
+      this.user = { ...this.user, ...data };
+      try {
+        await this.userService.updateUserData(this.user);
+        const toast = await this.toastCtrl.create({
+          message: 'Perfil actualizado correctamente',
+          duration: 1500,
+          color: 'success'
+        });
+        await toast.present();
+      } catch (err) {
+        console.error('Error actualizando usuario', err);
+        const toast = await this.toastCtrl.create({
+          message: 'Error al guardar cambios',
+          duration: 1500,
+          color: 'danger'
+        });
+        await toast.present();
+      }
+    }
+  }
+
+  // Return a human-friendly label for the measure preference
+  getMeasureLabel(key?: string) {
+    if (!key) return '—';
+    return this.measureLabels[key] || key;
   }
 
   cambiarTema(event: any) {
