@@ -22,6 +22,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=1',
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=2',
   },
   {
     id: 3,
@@ -64,6 +66,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=3',
   },
   {
     id: 4,
@@ -86,6 +89,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=4',
   },
   {
     id: 5,
@@ -108,6 +112,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=5',
   },
   {
     id: 6,
@@ -130,6 +135,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
+    imagen: 'https://picsum.photos/300/200?random=6',
   },
   {
     id: 7,
@@ -151,6 +157,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=7',
   },
   {
     id: 8,
@@ -173,6 +180,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=8',
   },
   {
     id: 9,
@@ -195,6 +203,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=9',
   },
   {
     id: 10,
@@ -217,6 +226,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=10',
   },
   {
     id: 11,
@@ -238,6 +248,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=11',
   },
   {
     id: 12,
@@ -260,6 +271,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=12',
   },
   {
     id: 13,
@@ -280,6 +292,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=13',
   },
   {
     id: 14,
@@ -302,6 +315,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=14',
   },
   {
     id: 15,
@@ -323,6 +337,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=15',
   },
   {
     id: 16,
@@ -345,6 +360,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=16',
   },
   {
     id: 17,
@@ -367,6 +383,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=17',
   },
   {
     id: 18,
@@ -389,6 +406,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=18',
   },
   {
     id: 19,
@@ -410,6 +428,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=19',
   },
   {
     id: 20,
@@ -432,5 +451,6 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
+    imagen: 'https://picsum.photos/300/200?random=20',
   },
 ];

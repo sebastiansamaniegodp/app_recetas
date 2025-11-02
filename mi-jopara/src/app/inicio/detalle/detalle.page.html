@@ -11,6 +11,14 @@
   <div class="detalle-container" *ngIf="recipe">
     <!-- Card principal con información de la receta -->
     <ion-card class="recipe-detail-card">
+      <!-- Imagen de la receta -->
+      <div class="recipe-image" *ngIf="recipe.imagen">
+        <img [src]="recipe.imagen" [alt]="recipe.nombre" />
+      </div>
+
+      <!-- Placeholder si no hay imagen -->
+      <div class="recipe-image-placeholder" *ngIf="!recipe.imagen"></div>
+
       <ion-card-header>
         <div class="header-content">
           <div class="title-container">

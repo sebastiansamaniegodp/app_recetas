@@ -81,6 +81,20 @@ ion-header {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
+    .recipe-image {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      background-color: var(--ion-color-light);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
     .recipe-image-placeholder {
       width: 100%;
       height: 120px;
@@ -142,6 +156,10 @@ ion-header {
 @media (min-width: 768px) {
   .recipes-grid {
     .recipe-card {
+      .recipe-image {
+        height: 150px;
+      }
+
       .recipe-image-placeholder {
         height: 150px;
       }

@@ -47,8 +47,13 @@
         *ngFor="let recipe of displayedRecipes"
       >
         <ion-card class="recipe-card" (click)="viewRecipeDetail(recipe.id)">
-          <!-- Placeholder para imagen -->
-          <div class="recipe-image-placeholder"></div>
+          <!-- Imagen de la receta -->
+          <div class="recipe-image" *ngIf="recipe.imagen">
+            <img [src]="recipe.imagen" [alt]="recipe.nombre" />
+          </div>
+
+          <!-- Placeholder si no hay imagen -->
+          <div class="recipe-image-placeholder" *ngIf="!recipe.imagen"></div>
 
           <ion-card-header>
             <div class="card-header-content">
