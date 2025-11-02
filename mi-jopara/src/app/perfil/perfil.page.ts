@@ -1,12 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController, ToastController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user.service'; // Asegúrate de tener este servicio
+import { AlertController, ModalController, ToastController } from '@ionic/angular/standalone';
+import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
+         IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+         IonList, IonItem, IonLabel, IonToggle, IonAvatar } from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
   styleUrls: ['./perfil.page.scss'],
+  standalone: true,
+  imports: [
+    IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
+    IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule, NgIf
+  ]
 })
 export class PerfilPage implements OnInit {
   user: any = {
