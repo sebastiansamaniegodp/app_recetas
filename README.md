@@ -23,16 +23,23 @@ El nombre "Mi Jopara" está inspirado en la cocina paraguaya, reflejando un comp
 
 ## Características
 
-- **Explorar Recetas**: Descubre una colección curada de recetas en múltiples categorías
-- **Búsqueda Inteligente**: Encuentra recetas por nombre o ingredientes al instante
-- **Filtrado por Categorías**: Filtra recetas por tipo de comida, objetivos dietéticos o preferencias de sabor
-  - Desayuno, Almuerzo, Merienda, Cena
-  - Saludables, Salados, Dulces
-  - Masa Muscular, Bajar de Peso
-- **Colección de Favoritos**: Guarda tus recetas favoritas para acceso rápido
-- **Recetas Populares**: Descubre recetas en tendencia y mejor valoradas
-- **Información Nutricional Detallada**: Visualiza información nutricional completa para cada receta
-- **Diseño Responsivo**: Optimizado tanto para dispositivos iOS como Android
+### Implementadas ✅
+- **Explorar Recetas**: 20 recetas mocked en múltiples categorías
+- **Búsqueda en Tiempo Real**: Busca por nombre o ingredientes
+- **Filtrado por Categorías**: 9 categorías (Desayuno, Almuerzo, Merienda, Cena, Saludables, Salados, Dulces, Masa Muscular, Bajar de Peso)
+- **Colección de Favoritos**: Guarda recetas favoritas en memoria
+- **Información Nutricional**: Calorías, proteínas, carbohidratos y grasas
+- **Perfil de Usuario**: Edición de datos y estadísticas
+- **Animaciones Personalizadas**: Efectos en favoritos con partículas
+- **Modo Oscuro**: Toggle de tema (se resetea al refrescar)
+- **Arquitectura Reactiva**: RxJS + Angular standalone components
+
+### No Implementado ❌
+- Persistencia de datos (sin localStorage)
+- Backend/API integration
+- Autenticación real
+- Creación/edición de recetas
+- Pruebas automatizadas
 
 ## Stack Tecnológico
 
@@ -97,19 +104,6 @@ Para desarrollo nativo:
 | `npm run lint` | Analizar archivos TypeScript y HTML |
 | `npm run watch` | Compilar en modo watch |
 
-### Desarrollo Nativo
-
-```bash
-# Sincronizar recursos web con proyectos nativos
-npx cap sync
-
-# Abrir proyecto iOS en Xcode
-npx cap open ios
-
-# Abrir proyecto Android en Android Studio
-npx cap open android
-```
-
 ## Estructura del Proyecto
 
 ```
@@ -131,83 +125,6 @@ mi-jopara/
 ├── android/                     # Proyecto nativo Android
 ├── ios/                         # Proyecto nativo iOS
 └── www/                         # Salida de compilación de producción
-```
-
-## Arquitectura
-
-### Diseño de Componentes
-
-- **Componentes Standalone**: Utiliza la arquitectura de componentes standalone de Angular 20
-- **Carga Perezosa**: Todas las rutas se cargan de forma perezosa para rendimiento óptimo
-- **Estado Reactivo**: BehaviorSubjects de RxJS para gestión de estado centralizada
-
-### Flujo de Datos
-
-```
-RecipeService (BehaviorSubject)
-      ↓
-   Componentes se suscriben a observables
-      ↓
-   La UI se actualiza de forma reactiva
-```
-
-### Estructura de Navegación
-
-- **Diseño de Pestañas**: Navegación por pestañas inferiores con 3 secciones principales
-  - **Inicio**: Página principal/Explorar recetas
-  - **Colección**: Favoritos
-  - **Perfil**: Configuración de usuario
-- **Rutas Anidadas**: Páginas de detalle anidadas bajo rutas padre
-
-## Hoja de Ruta
-
-- [ ] Integración con backend (endpoints API)
-- [ ] Autenticación y perfiles de usuario
-- [ ] Creación y edición de recetas
-- [ ] Funciones de compartir en redes sociales
-- [ ] Soporte para modo sin conexión
-- [ ] Soporte multi-idioma
-- [ ] Calificaciones y reseñas de recetas
-- [ ] Calendario de planificación de comidas
-- [ ] Generación de lista de compras
-
-## Contribuir
-
-¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
-
-1. Haz fork del repositorio
-2. Crea una rama de característica (`git checkout -b feature/CaracteristicaIncreible`)
-3. Haz commit de tus cambios (`git commit -m 'Agregar alguna CaracteristicaIncreible'`)
-4. Haz push a la rama (`git push origin feature/CaracteristicaIncreible`)
-5. Abre un Pull Request
-
-### Guías de Desarrollo
-
-- Seguir la guía de estilo de Angular
-- Mantener el cumplimiento del modo estricto de TypeScript
-- Escribir pruebas unitarias para nuevas características
-- Actualizar la documentación según sea necesario
-
-## Pruebas
-
-```bash
-# Ejecutar todas las pruebas
-npm test
-
-# Ejecutar pruebas en modo watch
-ng test --watch
-```
-
-## Compilar para Producción
-
-```bash
-# Compilación web
-npm run build
-
-# Sincronizar proyectos nativos
-npx cap sync
-
-# Compilar para iOS/Android usando los IDEs respectivos
 ```
 
 ## Licencia
