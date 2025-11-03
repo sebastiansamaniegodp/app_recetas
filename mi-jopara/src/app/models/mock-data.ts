@@ -22,7 +22,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=1',
+    imagen: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop',
+    tiempoPreparacion: 60,
   },
   {
     id: 2,
@@ -44,7 +45,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=2',
+    imagen: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=800&h=600&fit=crop',
+    tiempoPreparacion: 15,
   },
   {
     id: 3,
@@ -66,7 +68,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=3',
+    imagen: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=800&h=600&fit=crop',
+    tiempoPreparacion: 5,
   },
   {
     id: 4,
@@ -89,7 +92,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=4',
+    imagen: 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800&h=600&fit=crop',
+    tiempoPreparacion: 60,
   },
   {
     id: 5,
@@ -112,7 +116,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=5',
+    imagen: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=800&h=600&fit=crop',
+    tiempoPreparacion: 25,
   },
   {
     id: 6,
@@ -135,7 +140,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: true,
-    imagen: 'https://picsum.photos/300/200?random=6',
+    imagen: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop',
+    tiempoPreparacion: 45,
   },
   {
     id: 7,
@@ -157,7 +163,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=7',
+    imagen: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800&h=600&fit=crop',
+    tiempoPreparacion: 20,
   },
   {
     id: 8,
@@ -180,7 +187,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=8',
+    imagen: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&h=600&fit=crop',
+    tiempoPreparacion: 15,
   },
   {
     id: 9,
@@ -203,7 +211,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=9',
+    imagen: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&h=600&fit=crop',
+    tiempoPreparacion: 40,
   },
   {
     id: 10,
@@ -226,7 +235,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=10',
+    imagen: 'https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=800&h=600&fit=crop',
+    tiempoPreparacion: 35,
   },
   {
     id: 11,
@@ -248,7 +258,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=11',
+    imagen: 'https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=800&h=600&fit=crop',
+    tiempoPreparacion: 5,
   },
   {
     id: 12,
@@ -271,7 +282,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=12',
+    imagen: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=600&fit=crop',
+    tiempoPreparacion: 30,
   },
   {
     id: 13,
@@ -292,7 +304,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=13',
+    imagen: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=800&h=600&fit=crop',
+    tiempoPreparacion: 15,
   },
   {
     id: 14,
@@ -315,7 +328,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=14',
+    imagen: 'https://images.unsplash.com/photo-1599974568058-20e3e4b6d500?w=800&h=600&fit=crop',
+    tiempoPreparacion: 50,
   },
   {
     id: 15,
@@ -337,7 +351,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=15',
+    imagen: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=600&fit=crop',
+    tiempoPreparacion: 5,
   },
   {
     id: 16,
@@ -360,7 +375,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=16',
+    imagen: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=800&h=600&fit=crop',
+    tiempoPreparacion: 25,
   },
   {
     id: 17,
@@ -383,7 +399,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=17',
+    imagen: 'https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=800&h=600&fit=crop',
+    tiempoPreparacion: 65,
   },
   {
     id: 18,
@@ -406,7 +423,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=18',
+    imagen: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=800&h=600&fit=crop',
+    tiempoPreparacion: 15,
   },
   {
     id: 19,
@@ -428,7 +446,8 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=19',
+    imagen: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=600&fit=crop',
+    tiempoPreparacion: 30,
   },
   {
     id: 20,
@@ -451,6 +470,7 @@ export const MOCK_RECIPES: Recipe[] = [
     },
     isFavorite: false,
     isPopular: false,
-    imagen: 'https://picsum.photos/300/200?random=20',
+    imagen: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&h=600&fit=crop',
+    tiempoPreparacion: 25,
   },
 ];
