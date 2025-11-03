@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent, IonItem, IonLabel, IonInput, IonTextarea, IonList, IonSelect, IonSelectOption, IonToggle, IonAvatar } from '@ionic/angular/standalone';
+import { ModalController, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonItem, IonLabel, IonInput, IonTextarea, IonList, IonSelect, IonSelectOption, IonToggle, IonAvatar } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     FormsModule,
-    IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
+    IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent,
     IonItem, IonLabel, IonInput, IonTextarea, IonList, IonSelect, IonSelectOption, IonToggle, IonAvatar
   ]
 })
