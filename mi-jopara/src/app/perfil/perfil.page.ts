@@ -16,7 +16,7 @@ import { PerfilEditComponent } from './perfil-edit.component';
   imports: [
     IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonIcon, IonContent,
     IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
-    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule, PerfilEditComponent
+    IonList, IonItem, IonLabel, IonToggle, IonAvatar, FormsModule
   ]
 })
 export class PerfilPage implements OnInit {
