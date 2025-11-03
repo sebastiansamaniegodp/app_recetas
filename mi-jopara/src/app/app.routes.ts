@@ -7,20 +7,8 @@ export const routes: Routes = [
     children: [
       {
         path: 'inicio',
-        children: [
-          {
-            path: '',
-            loadComponent: () =>
-              import('./inicio/inicio.page').then((m) => m.InicioPage),
-          },
-          {
-            path: 'detalle/:id',
-            loadComponent: () =>
-              import('./inicio/detalle/detalle.page').then(
-                (m) => m.DetallePage
-              ),
-          },
-        ],
+        loadComponent: () =>
+          import('./inicio/inicio.page').then((m) => m.InicioPage),
       },
       {
         path: 'coleccion',
@@ -29,12 +17,20 @@ export const routes: Routes = [
       },
       {
         path: 'mis-recetas',
-        loadComponent: () => import('./mis-recetas/mis-recetas.page').then((m) => m.MisRecetasPage),
+        loadComponent: () => 
+          import('./mis-recetas/mis-recetas.page').then((m) => m.MisRecetasPage),
       },
       {
         path: 'perfil',
         loadComponent: () =>
           import('./perfil/perfil.page').then((m) => m.PerfilPage),
+      },
+      {
+        path: 'detalle/:id',
+        loadComponent: () =>
+          import('./inicio/detalle/detalle.page').then(
+            (m) => m.DetallePage
+          ),
       },
       {
         path: '',

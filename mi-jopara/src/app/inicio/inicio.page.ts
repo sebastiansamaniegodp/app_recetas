@@ -239,7 +239,7 @@ export class InicioPage implements OnInit {
    * Navega a la página de detalle de una receta
    */
   viewRecipeDetail(recipeId: number) {
-    this.router.navigate(['/tabs/inicio/detalle', recipeId]);
+    this.router.navigate(['/tabs/detalle', recipeId]);
   }
 
   /**

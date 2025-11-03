@@ -1,22 +1,4 @@
-/** import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { bookmarkOutline } from 'ionicons/icons';
-
-@Component({
-  selector: 'app-coleccion',
-  templateUrl: 'coleccion.page.html',
-  styleUrls: ['coleccion.page.scss'],
-  standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon],
-})
-export class ColeccionPage {
-  constructor() {
-    addIcons({ bookmarkOutline });
-  }
-} */  // ANTES DE TOCAR 
-
-  import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { 
   IonHeader, 
@@ -33,7 +15,7 @@ import {
   IonBadge
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { bookmarkOutline, star, timeOutline, flameOutline } from 'ionicons/icons';
+import { bookmarkOutline, star, timeOutline, flameOutline, restaurantOutline } from 'ionicons/icons';
 import { RecipeService } from '../services/recipe.service';
 import { Recipe } from '../models/recipe.model';
 import { Subscription } from 'rxjs';
@@ -68,7 +50,7 @@ export class ColeccionPage implements OnInit, OnDestroy {
     private recipeService: RecipeService,
     private router: Router
   ) {
-    addIcons({ bookmarkOutline, star, timeOutline, flameOutline });
+    addIcons({ bookmarkOutline, star, timeOutline, flameOutline, restaurantOutline });
   }
 
   ngOnInit() {
@@ -76,7 +58,7 @@ export class ColeccionPage implements OnInit, OnDestroy {
     this.subscription = this.recipeService.getFavorites().subscribe(
       (favorites) => {
         this.favoriteRecipes = favorites;
-        console.log('Favoritos actualizados:', favorites.length); // Para debug
+        console.log('Favoritos actualizados:', favorites.length);
       }
     );
   }
@@ -92,7 +74,9 @@ export class ColeccionPage implements OnInit, OnDestroy {
    * Navega al detalle de la receta
    */
   goToRecipeDetail(recipeId: number) {
-    this.router.navigate(['/detalle', recipeId]);
+    console.log('Navegando a detalle de receta:', recipeId);
+    // Navegar a la ruta correcta dentro de tabs
+    this.router.navigate(['/tabs/detalle', recipeId]);
   }
 
   /**
@@ -100,6 +84,7 @@ export class ColeccionPage implements OnInit, OnDestroy {
    */
   removeFavorite(recipe: Recipe, event: Event) {
     event.stopPropagation();
+    console.log('Removiendo favorito:', recipe.nombre);
     this.recipeService.toggleFavorite(recipe.id);
   }
 }
