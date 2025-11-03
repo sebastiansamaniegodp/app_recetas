@@ -252,16 +252,14 @@ export class InicioPage implements OnInit {
   /**
    * Obtiene el color de una categoría
    */
-  getCategoryColor(category: Category): string {
-    return this.categoryColors[category];
-  }
+  getCategoryColor(category: string): string {
+  return '#8ba888'; // Verde olivo para todas
+}
 
   /**
    * Obtiene el gradiente lineal de una categoría
    */
   getCategoryGradient(category: Category): string {
-    const baseColor = this.categoryColors[category];
-    const lightColor = this.categoryColorsLight[category];
-    return `linear-gradient(45deg, ${baseColor}, ${lightColor})`;
+    return 'linear-gradient(135deg, #8ba888 0%, #6b8a69 100%)';
   }
 }
