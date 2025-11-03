@@ -42,3 +42,308 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* ============================================
+   IMPORTAR FUENTES DE GOOGLE
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   VARIABLES GLOBALES DEL TEMA
+   ============================================ */
+:root {
+  // Colores principales - Naranja
+  --app-primary: #ece2c6;
+  --app-primary-dark: #b85a0a;
+  --app-primary-light: #e67f1a;
+  --app-primary-rgb: 209, 106, 12;
+  
+  // Verde olivo (para chips/badges)
+  --app-accent: #8ba888;
+  --app-accent-dark: #6b8a69;
+  --app-accent-light: #a5c3a2;
+  
+  // Neutrales
+  --app-background: #f5f5f5;
+  --app-text: #2c3e50;
+  --app-text-light: #7f8c8d;
+  --app-text-lighter: #95a5a6;
+  
+  // Sombras
+  --app-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --app-shadow-hover: 0 4px 12px rgba(209, 106, 12, 0.2);
+  
+  // Override de colores de Ionic
+  --ion-color-primary: #ece2c6;
+  --ion-color-primary-rgb: 209, 106, 12;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #b85a0a;
+  --ion-color-primary-tint: #e67f1a;
+  
+  // Fuentes
+  --app-font-title: 'Playfair Display', serif;
+  --app-font-body: 'Poppins', sans-serif;
+}
+
+/* ============================================
+   ESTILOS GLOBALES DEL BODY
+   ============================================ */
+body {
+  font-family: var(--app-font-body);
+}
+
+/* ============================================
+   TIPOGRAFÍA PARA "MI JOPARA"
+   ============================================ */
+.app-title {
+  font-family: var(--app-font-title);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: black;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   ESTILOS PARA HEADERS
+   ============================================ */
+ion-header {
+  ion-toolbar {
+    --background: var(--app-primary);
+    --color: black;
+    --border-width: 0;
+    box-shadow: 0 2px 12px rgba(209, 106, 12, 0.3);
+
+    ion-title {
+      font-family: var(--app-font-title);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      color: black;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    ion-back-button {
+      --color: black;
+    }
+
+    ion-buttons {
+      ion-button {
+        --color: black;
+      }
+    }
+  }
+}
+
+/* ============================================
+   ESTILOS PARA TAB BAR
+   ============================================ */
+ion-tab-bar {
+  --background: var(--app-primary);
+  --color: rgba(255, 255, 255, 0.7);
+  border-top: none;
+  box-shadow: 0 -2px 12px rgba(209, 106, 12, 0.3);
+  height: 60px;
+
+  ion-tab-button {
+    --color: rgba(255, 255, 255, 0.7);
+    --color-selected: black;
+    font-family: var(--app-font-body);
+    font-weight: 500;
+
+    &.tab-selected {
+      --color: white;
+      
+      ion-icon {
+        transform: scale(1.15);
+        transition: transform 0.2s ease;
+      }
+
+      ion-label {
+        font-weight: 600;
+      }
+    }
+
+    ion-icon {
+      font-size: 1.6rem;
+      transition: transform 0.2s ease;
+    }
+
+    ion-label {
+      font-size: 0.75rem;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+  }
+}
+
+/* ============================================
+   ESTILOS GLOBALES PARA CARDS
+   ============================================ */
+ion-card {
+  border-radius: 12px;
+  box-shadow: var(--app-shadow);
+  transition: all 0.3s ease;
+  margin: 8px;
+
+  &:hover {
+    box-shadow: var(--app-shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  ion-card-title {
+    color: var(--app-text);
+    font-weight: 600;
+    font-family: var(--app-font-body);
+  }
+
+  ion-card-subtitle {
+    color: var(--app-text-light);
+    font-family: var(--app-font-body);
+  }
+
+  ion-card-content {
+    font-family: var(--app-font-body);
+  }
+}
+
+/* ============================================
+   ESTILOS GLOBALES PARA CHIPS/BADGES
+   ============================================ */
+ion-chip {
+  --background: var(--app-accent);
+  --color: black;
+  font-weight: 500;
+  font-family: var(--app-font-body);
+  border-radius: 20px;
+  padding: 8px 14px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    --background: var(--app-accent-dark);
+    transform: scale(1.05);
+  }
+
+  &[color="primary"] {
+    --background: var(--app-primary);
+    
+    &:hover {
+      --background: var(--app-primary-dark);
+    }
+  }
+}
+
+ion-badge {
+  --background: var(--app-accent);
+  --color: black;
+  font-family: var(--app-font-body);
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 4px 10px;
+}
+
+/* ============================================
+   ESTILOS GLOBALES PARA BOTONES
+   ============================================ */
+ion-button {
+  --border-radius: 8px;
+  font-family: var(--app-font-body);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: none;
+
+  &[color="primary"] {
+    --background: var(--app-primary);
+    --background-hover: var(--app-primary-dark);
+    --box-shadow: 0 4px 12px rgba(209, 106, 12, 0.3);
+  }
+}
+
+/* ============================================
+   ESTILOS GLOBALES PARA SEARCHBAR
+   ============================================ */
+ion-searchbar {
+  --border-radius: 12px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: var(--app-font-body);
+
+  &::part(icon) {
+    color: var(--app-primary);
+  }
+}
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.4s ease;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADO
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--app-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-primary-light);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--app-primary);
+  }
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.text-primary {
+  color: var(--app-primary);
+}
+
+.text-accent {
+  color: var(--app-accent);
+}
+
+.bg-primary {
+  background: var(--app-primary);
+}
+
+.bg-accent {
+  background: var(--app-accent);
+}

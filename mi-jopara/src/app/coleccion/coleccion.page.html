@@ -1,20 +1,3 @@
-<!-- ><ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-text-center">
-      - MI JOPARA -
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="placeholder-container">
-    <ion-icon name="bookmark-outline" class="placeholder-icon"></ion-icon>
-    <h2>Colección</h2>
-    <p>Aquí podrás ver y administrar todas tus recetas favoritas.</p>
-    <p class="coming-soon">Próximamente</p>
-  </div>
-</ion-content> --> <!-- antes de modif -->
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">
@@ -31,7 +14,7 @@
       <h2>Mi Colección</h2>
       <p>Aquí podrás ver y administrar todas tus recetas favoritas.</p>
       <p class="empty-message">
-      Toca la <ion-icon name="star" color="warning"></ion-icon> en cualquier receta para agregarla
+        Toca la <ion-icon name="star" color="warning"></ion-icon> en cualquier receta para agregarla
       </p>
     </div>
 
@@ -45,57 +28,60 @@
       <div class="recipes-grid">
         <ion-card 
           *ngFor="let recipe of favoriteRecipes" 
-          (click)="goToRecipeDetail(recipe.id)"
-          class="recipe-card">
+          class="recipe-card"
+          button="true">
           
-          <!-- Imagen de la receta (si existe) -->
-          <div class="recipe-image" *ngIf="recipe.imagen">
-            <img [src]="recipe.imagen" [alt]="recipe.nombre" />
+          <!-- Contenedor clickeable para navegar -->
+          <div class="card-clickable" (click)="goToRecipeDetail(recipe.id)">
+            <!-- Imagen de la receta (si existe) -->
+            <div class="recipe-image" *ngIf="recipe.imagen">
+              <img [src]="recipe.imagen" [alt]="recipe.nombre" />
+            </div>
+            
+            <!-- Placeholder si no hay imagen -->
+            <div class="recipe-image-placeholder" *ngIf="!recipe.imagen">
+              <ion-icon name="restaurant"></ion-icon>
+            </div>
+
+            <ion-card-header>
+              <ion-card-subtitle class="recipe-meta">
+                <!-- Tiempo de preparación -->
+                <span *ngIf="recipe.tiempoPreparacion">
+                  <ion-icon name="time-outline"></ion-icon>
+                  {{ recipe.tiempoPreparacion }} min
+                </span>
+                
+                <!-- Calorías -->
+                <span>
+                  <ion-icon name="flame-outline"></ion-icon>
+                  {{ recipe.infoNutricional.calorias }} kcal
+                </span>
+              </ion-card-subtitle>
+              
+              <ion-card-title>{{ recipe.nombre }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="recipe-description">{{ recipe.descripcion }}</p>
+              
+              <!-- Categorías -->
+              <div class="categories">
+                <ion-badge 
+                  *ngFor="let categoria of recipe.categorias.slice(0, 2)" 
+                  color="secondary">
+                  {{ categoria }}
+                </ion-badge>
+              </div>
+            </ion-card-content>
           </div>
-          
-          <!-- Placeholder si no hay imagen -->
-          <div class="recipe-image-placeholder" *ngIf="!recipe.imagen">
-            <ion-icon name="restaurant"></ion-icon>
-          </div>
-          
-          <!-- Botón de favorito -->
+
+          <!-- Botón de favorito (fuera del contenedor clickeable) -->
           <ion-button 
             fill="clear" 
             class="favorite-btn"
             (click)="removeFavorite(recipe, $event)">
             <ion-icon slot="icon-only" name="star" color="warning"></ion-icon>
           </ion-button>
-
-          <ion-card-header>
-            <ion-card-subtitle class="recipe-meta">
-              <!-- Tiempo de preparación -->
-              <span *ngIf="recipe.tiempoPreparacion">
-                <ion-icon name="time-outline"></ion-icon>
-                {{ recipe.tiempoPreparacion }} min
-              </span>
-              
-              <!-- Calorías -->
-              <span>
-                <ion-icon name="flame-outline"></ion-icon>
-                {{ recipe.infoNutricional.calorias }} kcal
-              </span>
-            </ion-card-subtitle>
-            
-            <ion-card-title>{{ recipe.nombre }}</ion-card-title>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p class="recipe-description">{{ recipe.descripcion }}</p>
-            
-            <!-- Categorías -->
-            <div class="categories">
-              <ion-badge 
-                *ngFor="let categoria of recipe.categorias.slice(0, 2)" 
-                color="secondary">
-                {{ categoria }}
-              </ion-badge>
-            </div>
-          </ion-card-content>
         </ion-card>
       </div>
     </div>

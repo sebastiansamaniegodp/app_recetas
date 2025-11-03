@@ -1,14 +1,16 @@
 ion-header {
   ion-toolbar {
-    --background: transparent;
-    background: linear-gradient(135deg, var(--ion-color-primary-shade) 0%, var(--ion-color-primary) 50%, var(--ion-color-secondary-shade) 100%);
-    --color: white;
+    --background: #ece2c6 !important;
+    background: #ece2c6 !important;
+    --color: #2c3e50 !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 12px rgba(236, 226, 198, 0.4);
 
     ion-title {
       font-weight: bold;
       font-size: 1.2rem;
       letter-spacing: 2px;
-      color: white;
+      color: black;
     }
   }
 }

@@ -1,10 +1,10 @@
 ion-tab-bar {
   ion-tab-button {
     // Color de iconos y texto no seleccionados (casi blanco)
-    --color: #f5f5f5;
+    --color: black;
 
     // Color de iconos y texto seleccionados (blanco completo)
-    --color-selected: #ffffff;
+    --color-selected: #6b8a69;
 
     ion-icon {
       font-size: 1.5rem;
@@ -15,4 +15,85 @@ ion-tab-bar {
       margin-top: 4px;
     }
   }
+
+  /* ============================================
+   TAB BAR CON TEMA ARENA
+   ============================================ */
+ion-tab-bar {
+  --background: #ff8a16;
+  --color: rgba(255, 255, 255, 0.7);
+  border-top: none;
+  box-shadow: 0 -2px 16px rgba(255, 138, 22, 0.4);
+  height: 60px;
+  padding-top: 4px;
+
+  ion-tab-button {
+    // Color de iconos y texto no seleccionados
+    --color: rgba(255, 255, 255, 0.7);
+    
+    // Color de iconos y texto seleccionados
+    --color-selected: #ffffff;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    // Estado seleccionado
+    &.tab-selected {
+      --color: white;
+      
+      ion-icon {
+        transform: scale(1.15);
+        transition: transform 0.2s ease;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      }
+
+      ion-label {
+        font-weight: 600;
+      }
+    }
+
+    // Iconos
+    ion-icon {
+      font-size: 1.6rem;
+      margin-bottom: 2px;
+      transition: transform 0.2s ease;
+    }
+
+    // Labels
+    ion-label {
+      font-size: 0.75rem;
+      margin-top: 4px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    // Hover effect
+    &:hover {
+      ion-icon {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* ============================================
+   ANIMACIÓN AL CAMBIAR DE TAB
+   ============================================ */
+@keyframes tabPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+ion-tab-button.tab-selected ion-icon {
+  animation: tabPulse 0.3s ease;
+}
+
 }

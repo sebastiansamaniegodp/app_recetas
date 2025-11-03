@@ -1,14 +1,14 @@
 ion-header {
   ion-toolbar {
-    --background: transparent;
+    --background: #ece2c6;
     background: linear-gradient(135deg, var(--ion-color-primary-shade) 0%, var(--ion-color-primary) 50%, var(--ion-color-secondary-shade) 100%);
-    --color: white;
+    --color: black;
 
     ion-title {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       letter-spacing: 2px;
-      color: white;
+      color: black;
     }
   }
 }
@@ -61,6 +61,7 @@ ion-header {
     transition: all 0.3s ease;
     position: relative;
     border: none;
+    color: #8ba888;
     opacity: 0.95;
 
     // Gradient border usando pseudo-elemento con mask-composite

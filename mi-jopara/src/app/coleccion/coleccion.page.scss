@@ -1,48 +1,3 @@
-ion-header {
-  ion-toolbar {
-    --background: transparent;
-    background: linear-gradient(135deg, var(--ion-color-primary-shade) 0%, var(--ion-color-primary) 50%, var(--ion-color-secondary-shade) 100%);
-    --color: white;
-
-    ion-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-      color: white;
-    }
-  }
-}
-
-.placeholder-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 40px;
-  text-align: center;
-
-  .placeholder-icon {
-    font-size: 120px;
-    color: var(--ion-color-primary);
-    opacity: 0.4;
-    margin-bottom: 24px;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--ion-color-dark);
-    margin-bottom: 16px;
-  }
-
-  p {
-    font-size: 1rem;
-    color: var(--ion-color-medium);
-    margin-bottom: 8px;
-  }
-}
-
 .collection-container {
   padding: 16px;
   min-height: 100%;
@@ -130,13 +85,18 @@ ion-header {
 .recipe-card {
   margin: 0;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  // Contenedor clickeable
+  .card-clickable {
+    cursor: pointer;
+    width: 100%;
   }
 
   // Imagen de la receta
@@ -232,7 +192,7 @@ ion-header {
       line-height: 1.4;
       margin-bottom: 12px;
       display: -webkit-box;
-      -webkit-line-clamp: 2; 
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
