@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent,
-    IonItem, IonLabel, IonInput, IonTextarea, IonList, IonSelect, IonSelectOption, IonToggle, IonAvatar
+    IonItem, IonLabel, IonInput, IonTextarea, IonList, IonSelect, IonSelectOption, IonAvatar
   ]
 })
 export class PerfilEditComponent implements OnInit {
